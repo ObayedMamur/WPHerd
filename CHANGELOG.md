@@ -5,6 +5,31 @@ All notable changes to WPHerd will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2025-01-28
+
+### 🐛 Fixed
+- **Command Execution**: Resolved "wp: command not found" error by implementing proper PATH resolution
+- **MySQL Database Names**: Fixed syntax errors with hyphenated database names by using underscores
+- **PHP Memory Limit**: Increased WP-CLI memory limit from 128MB to 512MB to prevent extraction failures
+- **macOS Security**: Added comprehensive installation guide for unsigned app security warnings
+
+### ✨ Improved
+- **Database Naming**: Auto-generated database names now use underscores (e.g., `my_site`) for better MySQL compatibility
+- **Folder Naming**: Folder names continue to use hyphens (e.g., `my-site`) for URL-friendly paths
+- **Error Handling**: Cleaner error messages without debug information in production
+- **Default Setup**: Removed default Elementor plugin installation for faster, cleaner WordPress setup
+
+### 🛠️ Technical Changes
+- **Path Resolution**: Dynamic detection of WP-CLI and MySQL installation paths
+- **Command Preprocessing**: Automatic full path resolution for system commands
+- **Memory Management**: PHP memory limit optimization for large WordPress installations
+- **Plugin Management**: Users can still add plugins via Advanced tab when needed
+
+### 📋 Installation Notes
+- **macOS Users**: Use right-click → Open method for first launch (see INSTALLATION_GUIDE.md)
+- **Requirements**: Laravel Herd, WP-CLI, and MySQL/MariaDB must be installed
+- **Compatibility**: Tested with macOS (Apple Silicon and Intel)
+
 ## [1.0.0] - 2025-01-28
 
 ### 🎉 First Official Release

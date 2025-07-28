@@ -63,10 +63,10 @@ function App() {
   // Auto-generated fields based on site title
   const folderName = formData.siteTitle ? formData.siteTitle.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '') : randomPlaceholders.folderName;
   const siteUrl = formData.siteTitle ? `${folderName}.test` : randomPlaceholders.siteUrl;
-  const dbName = formData.siteTitle ? folderName : randomPlaceholders.dbName;
+  const dbName = formData.siteTitle ? formData.siteTitle.toLowerCase().replace(/[^a-z0-9]/g, '_').replace(/_+/g, '_').replace(/^_|_$/g, '') : randomPlaceholders.dbName;
 
   // Dynamic plugins state
-  const [plugins, setPlugins] = useState([{ slug: 'elementor', active: true }]);
+  const [plugins, setPlugins] = useState([]);
 
   // Generated commands
   const [installCommand, setInstallCommand] = useState("");
